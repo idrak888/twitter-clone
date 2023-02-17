@@ -16,12 +16,19 @@
 
 @import "bulma";
 
+$primary: #1d92f2;
+
 .navbar {
-  background-color: #1DA1F2;
+  background-color: $primary;
 }
 
 .navbar-brand .title {
   color: white;
+  align-items: center;
+  img {
+    margin: 5px;
+    margin-bottom: -5px;
+  }
 }
 
 .navbar-menu {
@@ -37,7 +44,7 @@
 }
 
 .primary {
-  background-color: #1DA1F2;
+  background-color: $primary;
   color: white;
   border: none;
   &:hover {

@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application" %>
     <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+    <%= favicon_link_tag asset_path("icon.webp") %>
   </head>
 
   <body>
@@ -18,7 +19,7 @@
       <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
           <%= link_to root_path, class: "navbar-item" do %>
-            <h1 class="title is-5">Twitter</h1>
+            <h1 class="title is-5"><img src="https://www.pngkey.com/png/full/957-9574123_twitter-twitter-icon-white-transparent.png" width="25"/> Twitter</h1>
           <% end %>
         </a>
 
@@ -32,12 +33,25 @@
         <div class="navbar-end">
           <div class="field is-grouped">
             <p class="control">
-              <%= link_to "New Tweet", new_tweet_path, class: "button is-info is-inverted" %>
+              <%= link_to 'New Tweet', root_path, class: "button is-info is-inverted" %>
             </p>
-            <p class="control">
-              <%= link_to "Sign Up", new_tweet_path, class: "button primary" %>
-            </p>
+            <% if user_signed_in? %>
+              <p class="control">
+                <%= link_to current_user.name, edit_user_registration_path, class: "button primary" %>
+              </p>
+              <p>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button primary" %>
+              </p>
+            <% else %>
+              <p class="control">
+                <%= link_to 'Sign In', new_user_session_path, class: "button primary" %>
+              </p>
+              <p class="control">
+                <%= link_to 'Sign Up', new_user_registration_path, class: "button primary" %>
+              </p>
+            <% end %>
           </div>
+        </div>
         </div>
       </div>
     </nav>
