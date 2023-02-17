@@ -18,6 +18,11 @@ gem "puma", "~> 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem "bulma-rails", "~> 0.9.4"
+gem 'simple_form', '~> 5.2'
+gem 'gravatar_image_tag', '~> 1.2'
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -47,7 +52,8 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+  gem 'better_errors', '~> 2.9', '>= 2.9.1'
+  gem 'guard', '~> 2.18'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
