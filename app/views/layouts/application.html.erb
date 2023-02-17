@@ -7,11 +7,41 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
   </head>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <%= link_to root_path, class: "navbar-item" do %>
+            <h1 class="title is-5">Twitter</h1>
+          <% end %>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="field is-grouped">
+            <p class="control">
+              <%= link_to "New Tweet", new_tweet_path, class: "button is-info is-inverted" %>
+            </p>
+            <p class="control">
+              <%= link_to "Sign Up", new_tweet_path, class: "button primary" %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
   </body>
 </html>

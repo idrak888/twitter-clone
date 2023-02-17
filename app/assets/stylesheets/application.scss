@@ -15,3 +15,32 @@
  */
 
 @import "bulma";
+
+.navbar {
+  background-color: #1DA1F2;
+}
+
+.navbar-brand .title {
+  color: white;
+}
+
+.navbar-menu {
+  align-items: center;
+  padding: 10px;
+}
+
+.image {
+  border-radius: 50%;
+  img {
+    border-radius: 50%;
+  }
+}
+
+.primary {
+  background-color: #1DA1F2;
+  color: white;
+  border: none;
+  &:hover {
+    color: white;
+  }
+}
