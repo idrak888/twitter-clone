@@ -16,7 +16,11 @@
 
 @import "bulma";
 
-$primary: #1d92f2;
+$primary: #1d68f2;
+
+body {
+  background-color: #fcfcfc;
+}
 
 .navbar {
   background-color: $primary;
